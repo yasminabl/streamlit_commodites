@@ -3,9 +3,7 @@ pandas
 streamlit 
 plotly 
 numpy 
-plotly.graph_objects 
 altair 
-plotly.express
 datetime 
 datetime
 timedelta
