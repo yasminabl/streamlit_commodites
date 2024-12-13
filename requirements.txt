@@ -1,11 +1,11 @@
 requests 
-pandas as pd
-streamlit as st 
+pandas 
+streamlit 
 plotly 
-numpy as np
-plotly.graph_objects as go
-altair as alt
-plotly.express as px
+numpy 
+plotly.graph_objects 
+altair 
+plotly.express
 datetime 
 datetime
 timedelta
