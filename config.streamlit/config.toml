@@ -1,3 +1,10 @@
+[server]
+
+headless = true
+port = 8501
+enableCORS = false
+
+
 [theme]
 
 primaryColor="#154c79" 
