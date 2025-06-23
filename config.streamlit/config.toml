@@ -8,7 +8,8 @@ enableCORS = false
 [theme]
 
 primaryColor="#154c79" 
-backgroundColor="#000000" 
-secondaryBackgroundColor="#63970" 
+backgroundColor="black" 
+secondaryBackgroundColor="black"
+codeBackgroundColor = "black"
 textColor="#fff"
 font="sans serif"
