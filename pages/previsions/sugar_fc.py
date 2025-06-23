@@ -3,11 +3,9 @@ import pandas as pd
 import streamlit as st 
 import plotly 
 import numpy as np
-import psycopg2, psycopg2.extras
 import plotly.graph_objects as go
 import altair as alt
 import plotly.express as px
-import yfinance as yf
 from datetime import datetime, timedelta
 from features.functions import *
 import os 
