@@ -15,174 +15,6 @@ st.set_page_config(
     layout="wide",  #pour maximiser l'espace
 )
 #_______________________________________________________________________________________________________________________
-st.markdown(
-    """
-    <style>
-    /* Applique des styles uniquement aux liens dans la sidebar */
-    section[data-testid="stSidebar"] a {
-        color: black; /* Texte blanc */
-        text-decoration: none; /* Pas de soulignement */
-    }
-    section[data-testid="stSidebar"] a:hover {
-        color: #00FFFF; /* Optionnel : couleur au survol */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-hide_st_style="""
-<style>
-#MainMenu {visibility:hidden;}
-footer {visibility:hidden;}
-header {visibility:hidden;}
-</style>
-"""
-marquee_html = """
-<div style="overflow: hidden; white-space: nowrap; background-color: #000000; padding: 10px; border: 0px solid #ddd;">
-    <span style="display: inline-block; font-size: 24px; color: #FFFFFF; font-weight: bold; animation: scroll-left 10s linear infinite;">
-       Vision Globale des Marchés des Commodités : Analyse et Décision
-    </span>
-</div>
-
-<style>
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-span {
-  animation: scroll-left 5s linear infinite;
-}
-</style>
-"""
-
-# Insère le HTML dans Streamlit
-st.components.v1.html(marquee_html, height=50)
-
-#_FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:____________________________________________________________________________________________________________
-
-# Conteneur pour l'image et le texte
-with st.container():
-    col1, col2 = st.columns([2, 2])
-    
-    # Image dans la première colonne
-    with col1:
-        st.video("pages/picture/bourse2.mp4")
-    
-    # Gestion des "pages" dans la deuxième colonne
-    with col2:
-        # Création d'un état pour suivre la "page" actuelle
-        if "page_number" not in st.session_state:
-            st.session_state.page_number = 1
-
-        # Fonction pour changer de page
-        def change_page(next_page):
-            st.session_state.page_number = next_page
-
-        # Affichage du contenu en fonction de la page
-
-        if st.session_state.page_number == 1:
-            st.markdown(
-    "<h1 style='font-size:  20px;'>Transformer les Données en Actions : L'Impact des Dashboards sur la Stratégie</h1>",
-    unsafe_allow_html=True
-)
-            st.write("Ce dashboard a pour objectif de fournir une vision complète et détaillée des cours de marché des commodités. Que ce soit pour une analyse à court terme, à long terme ou pour des prévisions futures, cet outil est conçu pour aider à la prise de décision stratégique et à la gestion des risques.")
-
-
-
-        elif st.session_state.page_number == 2:
-            st.markdown(
-        "<h1 style='font-size: 30px;'>1 - Analyse de court terme</h1>",
-        unsafe_allow_html=True
-    )
-    
-            st.write("""
-        Faire une analyse à court terme sur une période d'un an présente plusieurs avantages stratégiques et opérationnels, 
-        en particulier dans des contextes de marchés dynamiques comme celui des commodités.
-    """)
-
-            st.markdown("""
-        - 📊 **Identification des tendances saisonnières** : Permet d'anticiper les fluctuations des prix en fonction des saisons.
-        - ⚡ **Suivi de la volatilité à court terme** : Permet de réagir rapidement aux fluctuations du marché.
-        - 💡 **Optimisation des décisions d'achat et de vente** : Aide à maximiser les gains en achetant quand les prix sont bas et en vendant quand ils sont élevés.
-        - 🔮 **Prévision des prix futurs** : Fournit une estimation des évolutions futures des prix des commodités.
-        - 📅 **Amélioration de la planification financière** : Aide à prévoir les coûts et les revenus pour l'année à venir.
-    """)
-       
-       
-        elif st.session_state.page_number == 3:
-           
-          st.markdown(
-        "<h1 style='font-size: 30px;'>2 - Analyse à long terme</h1>",
-        unsafe_allow_html=True
-    )
-    
-          st.write("""
-        Faire une analyse à long terme sur plusieurs années permet de comprendre les tendances durables des commodités et d'identifier des opportunités stratégiques à long terme.
-    """)
-
-          st.markdown("""
-        - 🔄 **Identification des tendances structurelles** : Permet de comprendre les cycles de marché à long terme et d'anticiper les évolutions majeures.
-        - 🌍 **Impact des facteurs externes** : Permet de prendre en compte les évolutions géopolitiques, économiques, et sociales qui affectent les prix sur plusieurs années.
-        - 📊 **Évaluation des performances économiques** : Analyse la rentabilité et les bénéfices sur le long terme pour évaluer les décisions stratégiques.
-        - 🛠️ **Ajustements des stratégies d'approvisionnement** : Aide à planifier les achats et les investissements à long terme pour maximiser les marges.
-        - 📅 **Prévisions sur plusieurs années** : Offre une perspective à long terme des tendances de prix, permettant une planification à plus grande échelle.
-    """)
-
-
-# Ajouter un style CSS pour personnaliser les boutons
-          st.markdown(
-    """
-    <style>
-    button {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1.2em;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    button:hover {
-        background-color: #007BFF;
-        transform: scale(1.05);
-    }
-
-    /* Style pour aligner les colonnes */
-    .stButton > button {
-        width: 100%;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-
- # Boutons pour naviguer entre les pages
-    col_prev, col_next = st.columns([1, 1])
-    with col_prev:
-        if st.session_state.page_number > 1:
-            if st.button("⬅️ Page Précédente"):
-                change_page(st.session_state.page_number - 1)
-
-    with col_next:
-        if st.session_state.page_number < 3:  # Limite de page pour exemple
-            if st.button("Page Suivante ➡️"):
-                change_page(st.session_state.page_number + 1)
-
-#FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:FIXME:
-
-
-st.sidebar.markdown('[Outils d’Analyse Technique](#outils)', unsafe_allow_html=True)
-st.sidebar.markdown('[Méthodes de prévisions](#methodes)', unsafe_allow_html=True)
-
-#_______________________________________________________________________________________________________________________
-
 
 # Ajouter du style CSS pour styliser les cartes
 st.markdown(
@@ -269,8 +101,8 @@ for i, card in enumerate(cards):
 st.subheader("")
 
 marquee_html = """
-<div style="overflow: hidden; white-space: nowrap; background-color: #000000; padding: 10px; border: 0px solid #ddd;">
-    <span style="display: inline-block; font-size: 24px; color: #FFFFFF; font-weight: bold; animation: scroll-left 10s linear infinite;">
+<div style="overflow: hidden; white-space: nowrap; background-color: #FFFFFF; padding: 10px; border: 0px solid #ddd;">
+    <span style="display: inline-block; font-size: 24px; color: #000000; font-weight: bold; animation: scroll-left 10s linear infinite;">
        Analyse Technique : Étapes pour Identifier une Tendance
     </span>
 </div>
@@ -352,8 +184,8 @@ with onglet_stoch:
     st.markdown("**Application pratique :** Utilisé pour confirmer les signaux de surachat et survente détectés par d'autres indicateurs.")
 
 marquee_html = """
-<div style="overflow: hidden; white-space: nowrap; background-color: #000000; padding: 10px; border: 0px solid #ddd;">
-    <span style="display: inline-block; font-size: 24px; color: #FFFFFF; font-weight: bold; animation: scroll-left 10s linear infinite;">
+<div style="overflow: hidden; white-space: nowrap; background-color: #FFFFF; padding: 10px; border: 0px solid #ddd;">
+    <span style="display: inline-block; font-size: 24px; color: #000000; font-weight: bold; animation: scroll-left 10s linear infinite;">
        Méthodes de Prévisions: Analyser, Lisser, Anticiper
     </span>
 </div>
@@ -382,7 +214,7 @@ st.markdown(
     div[data-testid="stTabs"] > div {
         font-size: 18px; /* Taille de police pour les onglets */
         font-weight: bold; /* Onglets en gras */
-        color: #FFFFFF; /* Couleur du texte */
+        color: #00000; /* Couleur du texte */
     }
 
     div[data-testid="stTabs"] > div > div[aria-selected="true"] {
@@ -477,4 +309,5 @@ with onglet_holt_winter:
         - Particulièrement utile pour les séries présentant des cycles réguliers (par exemple, des ventes saisonnières).
         """
     )
+
 
