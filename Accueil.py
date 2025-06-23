@@ -20,7 +20,7 @@ st.markdown(
     <style>
     /* Applique des styles uniquement aux liens dans la sidebar */
     section[data-testid="stSidebar"] a {
-        color: white; /* Texte blanc */
+        color: black; /* Texte blanc */
         text-decoration: none; /* Pas de soulignement */
     }
     section[data-testid="stSidebar"] a:hover {
